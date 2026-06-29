@@ -31,4 +31,3 @@ public class IndexNews implements Serializable {
     public LocalDateTime getPublishedAt() { return publishedAt; }
     public void setPublishedAt(LocalDateTime publishedAt) { this.publishedAt = publishedAt; }
 }
-

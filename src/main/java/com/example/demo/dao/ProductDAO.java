@@ -167,9 +167,9 @@ public class ProductDAO {
         String sql = "DELETE FROM product_images WHERE product_id = ?";
         jdbcTemplate.update(sql, productId);
     }
+    
     public void insertStockHistory(Integer variantId, String type, int quantity, Integer orderId) {
         String sql = "INSERT INTO stock_histories (variant_id, type, quantity, order_id, processed_at) VALUES (?, ?, ?, ?, NOW())";
         jdbcTemplate.update(sql, variantId, type, quantity, orderId);
     }
 }
-

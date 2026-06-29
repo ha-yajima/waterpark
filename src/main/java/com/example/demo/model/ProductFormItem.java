@@ -156,4 +156,3 @@ public class ProductFormItem {
         this.deleteSubImage = deleteSubImage;
     }
 }
-

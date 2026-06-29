@@ -51,5 +51,3 @@ public class IndexNewsDAO {
         jdbcTemplate.update(sql, id);
     }
 }
-
-
