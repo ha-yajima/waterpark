@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# Pythonの不要ファイル
+__pycache__/
+*.pyc
+.venv/
+env/
+.env
+.vscode/
