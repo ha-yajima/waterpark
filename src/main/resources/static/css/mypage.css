@@ -1,0 +1,457 @@
+@charset "UTF-8";
+/* =========================================================
+  01. 変数
+========================================================= */
+:root {
+   --main-blue: #74C2F2;
+   --pale-blue: #F1FAFF;
+   --soft-blue: #DDF2FC;
+   --deep-blue: #3A8FBF;
+   --nav-blue: #2F8FD3;
+   --nav-blue-dark: #1F6F94;
+   --brown: #98514B;
+   --text: #202426;
+   --sub-text: #4F626B;
+   --muted-text: #6F8894;
+   --line: #DDEFF7;
+   --white: #FFFFFF;
+}
+/* =========================================================
+  02. 共通
+========================================================= */
+* {
+   box-sizing: border-box;
+}
+html {
+   scroll-behavior: smooth;
+}
+body {
+   margin: 0;
+   font-family: "Yu Gothic", "Meiryo", sans-serif;
+   color: var(--text);
+   background: var(--white);
+   letter-spacing: 0.04em;
+}
+a,
+a:visited {
+   color: inherit;
+   text-decoration: none;
+}
+img {
+   max-width: 100%;
+   display: block;
+}
+.empty-message {
+   padding: 24px 0;
+   color: #5F6669;
+   font-size: 13px;
+}
+/* =========================================================
+  03. ログイン
+========================================================= */
+.login-container { max-width: 400px; margin: 0 auto; padding: 20px; }
+.form-group { margin-bottom: 15px; }
+.form-control { width: 100%; padding: 8px; box-sizing: border-box; }
+.btn-login {
+   width: 100%;
+   padding: 10px;
+   background-color: #007bff;
+   color: white;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   transition: background-color 0.25s;
+}
+.btn-login:hover {
+   background-color: var(--deep-blue);
+}
+.login-container > p {
+   text-align: center;
+   margin-top: 16px;
+}
+/* =========================================================
+  04. 会員情報変更
+========================================================= */
+.container {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px; }
+	
+.edit-form {
+   background: var(--white);
+   border: 1px solid var(--line);
+   border-radius: 8px;
+   padding: 24px;
+}
+.edit-form .form-group {
+   margin-bottom: 18px;
+}
+.edit-form label {
+   display: block;
+   font-size: 13px;
+   font-weight: bold;
+   color: var(--sub-text);
+   margin-bottom: 6px;
+}
+.edit-form .form-control,
+.edit-form input[type="text"],
+.edit-form input[type="email"] {
+   width: 100%;
+   padding: 8px;
+   border: 1px solid var(--line);
+   border-radius: 4px;
+   background: var(--pale-blue);
+   font-size: 14px;
+   box-sizing: border-box;
+}
+.edit-form .form-control:focus,
+.edit-form input:focus {
+   outline: none;
+   border-color: var(--main-blue);
+   background: var(--white);
+}
+.input-row {
+   display: flex;
+   gap: 10px;
+}
+.input-row input {
+   flex: 1;
+}
+.container h2,
+.login-container h2 {
+   color: var(--deep-blue);
+   padding-bottom: 8px;
+   margin-bottom: 20px;
+}
+.success-message {
+   background: var(--soft-blue);
+   color: var(--deep-blue);
+   padding: 10px 14px;
+   border-radius: 4px;
+   margin-bottom: 16px;
+   font-size: 13px;
+}
+
+.error-message {
+   background: #FBE7E7;
+   color: #B23B3B;
+   padding: 10px 14px;
+   border-radius: 4px;
+   margin-bottom: 16px;
+   font-size: 13px;
+}
+
+.form-actions {
+   text-align: center;
+   margin-top: 20px;
+}
+.form-actions .btn-login {
+   width: auto;
+   padding: 10px 40px;
+   border-radius: 4px;
+   cursor: pointer;
+}
+/* =========================================================
+  05. お問い合わせ・会員登録 共通パーツ
+========================================================= */
+.edit-form select,
+.edit-form textarea {
+   width: 100%;
+   padding: 8px;
+   border: 1px solid var(--line);
+   border-radius: 4px;
+   background: var(--pale-blue);
+   font-size: 14px;
+   font-family: inherit;
+   box-sizing: border-box;
+}
+.edit-form select:focus,
+.edit-form textarea:focus {
+   outline: none;
+   border-color: var(--main-blue);
+   background: var(--white);
+}
+.edit-form textarea {
+   resize: vertical;
+   min-height: 120px;
+}
+.edit-form input[type="file"] {
+   width: 100%;
+   padding: 8px 0;
+   font-size: 13px;
+   color: var(--sub-text);
+}
+.edit-form input[type="password"] {
+   width: 100%;
+   padding: 8px;
+   border: 1px solid var(--line);
+   border-radius: 4px;
+   background: var(--pale-blue);
+   font-size: 14px;
+   box-sizing: border-box;
+}
+.edit-form input[type="password"]:focus {
+   outline: none;
+   border-color: var(--main-blue);
+   background: var(--white);
+}
+.info-message {
+   background: var(--soft-blue);
+   color: var(--deep-blue);
+   padding: 10px 14px;
+   border-radius: 4px;
+   margin-bottom: 16px;
+   font-size: 13px;
+}
+/* =========================================================
+  06. 確認画面（一覧表示）
+========================================================= */
+.confirm-list {
+   border: 1px solid var(--line);
+   border-radius: 8px;
+   overflow: hidden;
+   margin-bottom: 20px;
+}
+.confirm-row {
+   display: flex;
+   padding: 14px 16px;
+   border-bottom: 1px solid var(--line);
+   background: var(--white);
+}
+.confirm-row:last-child {
+   border-bottom: none;
+}
+.confirm-row:nth-child(even) {
+   background: var(--pale-blue);
+}
+.confirm-label {
+   width: 160px;
+   flex-shrink: 0;
+   font-weight: bold;
+   color: var(--sub-text);
+   font-size: 14px;
+}
+.confirm-value {
+   flex: 1;
+   font-size: 14px;
+   word-break: break-all;
+}
+.confirm-actions {
+   display: flex;
+   justify-content: center;
+   gap: 16px;
+   margin-top: 24px;
+}
+.btn-back {
+   flex: 1;
+   padding: 10px 30px;
+   border: 1px solid var(--deep-blue);
+   color: var(--deep-blue);
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 14px;
+   white-space: nowrap;
+}
+.btn-back:hover {
+   background: rgb(192, 192, 192);
+}
+@media (max-width: 480px) {
+   .confirm-row {
+       flex-direction: column;
+       gap: 4px;
+   }
+   .confirm-label {
+       width: 100%;
+   }
+}
+/* =========================================================
+  07. マイページ
+========================================================= */
+.mypage-profile {
+   display: flex;
+   align-items: center;
+   gap: 14px;
+   margin-bottom: 8px;
+}
+.mypage-avatar {
+   width: 44px;
+   height: 44px;
+   border-radius: 50%;
+   background: var(--pale-blue);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-shrink: 0;
+   color: var(--deep-blue);
+   font-size: 20px;
+}
+.mypage-profile-name {
+   font-size: 17px;
+   font-weight: 500;
+   color: var(--text);
+}
+.mypage-profile-sub {
+   font-size: 13px;
+   color: var(--sub-text);
+   margin-top: 2px;
+}
+.mypage-edit-link {
+   margin: 24px 0 32px;
+   padding-left: 58px;
+}
+.mypage-edit-link a {
+   font-size: 13px;
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+}
+.mypage-section-title {
+   display: flex;
+   align-items: center;
+   gap: 8px;
+   margin-bottom: 16px;
+   font-size: 14px;
+   font-weight: 500;
+   color: var(--text);
+}
+.mypage-section-title .icon {
+   font-size: 17px;
+   color: var(--deep-blue);
+}
+.order-list {
+   border: 1px solid var(--line);
+   border-radius: 10px;
+   overflow: hidden;
+   margin-bottom: 36px;
+}
+.order-row {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 16px 20px;
+   border-bottom: 1px solid var(--pale-blue);
+}
+.order-row:last-child {
+   border-bottom: none;
+}
+.order-row-left {
+   display: flex;
+   align-items: center;
+   gap: 12px;
+}
+.order-row-left .icon {
+   font-size: 18px;
+   color: var(--main-blue);
+   flex-shrink: 0;
+}
+.order-date {
+   font-size: 14px;
+   color: var(--text);
+}
+.order-status-badge {
+   font-size: 12px;
+   color: var(--nav-blue);
+   background: var(--pale-blue);
+   padding: 3px 10px;
+   border-radius: 999px;
+   display: inline-block;
+}
+.order-price {
+   font-size: 13px;
+   color: var(--text);
+   margin-top: 6px;
+   text-align: right;
+}
+.mypage-links-row {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 28px;
+   padding-top: 20px;
+   border-top: 1px solid var(--line);
+}
+.mypage-links-row a,
+.mypage-links-row .btn-logout {
+   font-size: 13px;
+   display: inline-flex;
+   align-items: center;
+   gap: 6px;
+}
+.mypage-links-row .icon {
+   font-size: 15px;
+}
+.btn-logout {
+   padding: 0;
+   border: none;
+   background: none;
+   color: var(--nav-blue);
+   text-decoration: underline;
+   text-underline-offset: 3px;
+   cursor: pointer;
+   font-size: 14px;
+   font-family: inherit;
+   transition: color 0.2s;
+}
+.btn-logout:hover {
+   color: var(--nav-blue-dark);
+}
+@media (max-width: 480px) {
+   .order-row {
+       flex-direction: column;
+       align-items: flex-start;
+       gap: 10px;
+   }
+   .order-price {
+       text-align: left;
+   }
+}
+/* =========================================================
+  08. コンテンツ内リンク
+========================================================= */
+.container a,
+.container a:visited,
+.login-container a,
+.login-container a:visited {
+   color: var(--nav-blue);
+   text-decoration: underline;
+   text-underline-offset: 3px;
+   transition: color 0.2s;
+}
+.container a:hover
+.login-container a:hover {
+   color: var(--nav-blue-dark);
+}
+
+/* =========================================================
+  09. レスポンシブ
+========================================================= */
+@media (max-width: 480px) {
+   .edit-form {
+       padding: 16px;
+   }
+   .input-row {
+       flex-direction: column;
+       gap: 12px;
+   }
+   
+   /* コンテナ全体の余白をedit-formに合わせて詰める */
+    .container {
+        padding: 16px;
+    }
+
+    /* アバター分のインデントをやめて左寄せに */
+    .mypage-edit-link {
+        padding-left: 0;
+    }
+
+    /* フッターリンクのgapを詰めて、折り返し時に窮屈にならないように */
+    .mypage-links-row {
+        gap: 16px;
+    }
+
+    /* 保存・登録ボタンを幅いっぱいに広げる */
+    .form-actions .btn-login {
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+

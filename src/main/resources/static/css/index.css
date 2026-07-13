@@ -1,0 +1,469 @@
+@charset "UTF-8";
+/* =========================================================
+  water park - index.css
+  目次
+  01. 変数
+  02. 共通
+  03. ヘッダー
+  04. サイド検索メニュー
+  05. メインバナー
+  06. 商品セクション
+  07. お知らせ
+  08. フッター
+  09. プライバシーポリシー
+  10. キャンペーンページ
+  11. レスポンシブ
+========================================================= */
+/* =========================================================
+  01. 変数
+========================================================= */
+:root {
+   --main-blue: #74C2F2;
+   --pale-blue: #F1FAFF;
+   --soft-blue: #DDF2FC;
+   --deep-blue: #3A8FBF;
+   --nav-blue: #2F8FD3;
+   --nav-blue-dark: #1F6F94;
+   --brown: #98514B;
+   --text: #202426;
+   --sub-text: #4F626B;
+   --muted-text: #6F8894;
+   --line: #DDEFF7;
+   --white: #FFFFFF;
+}
+/* =========================================================
+  02. 共通
+========================================================= */
+* {
+   box-sizing: border-box;
+}
+html {
+   scroll-behavior: smooth;
+}
+body {
+   margin: 0;
+   font-family: "Yu Gothic", "Meiryo", sans-serif;
+   color: var(--text);
+   background: var(--white);
+   letter-spacing: 0.04em;
+}
+a,
+a:visited {
+   color: inherit;
+   text-decoration: none;
+}
+img {
+   max-width: 100%;
+   display: block;
+}
+.empty-message {
+   padding: 24px 0;
+   color: #5F6669;
+   font-size: 13px;
+}
+
+
+/* =========================================================
+  05. メインバナー
+========================================================= */
+.main-banner-section {
+   width: 100%;
+   aspect-ratio: 2.3 / 1;
+   position: relative;
+   overflow: hidden;
+   background: #F7F7F4;
+}
+.main-banner-wrapper {
+   display: flex;
+   width: 100%;
+   height: 100%;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+}
+.main-banner {
+   min-width: 100%;
+   width: 100%;
+   height: 100%;
+   position: relative;
+   flex-shrink: 0;
+   background: linear-gradient(135deg, rgba(116, 194, 242, 0.20), rgba(255, 255, 255, 0.95));
+}
+.main-banner img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.banner-text {
+   position: absolute;
+   right: 9%;
+   top: 50%;
+   transform: translateY(-50%);
+   z-index: 2;
+   max-width: 430px;
+   color: var(--white);
+   text-shadow: 0 2px 14px rgba(0, 0, 0, 0.32);
+}
+.banner-text h2 {
+   margin: 0 0 28px;
+   font-size: 32px;
+   line-height: 1.9;
+   font-weight: 500;
+   letter-spacing: 0.14em;
+}
+.banner-text p {
+   display: inline-block;
+   margin: 0;
+   padding: 13px 50px;
+   border: 1px solid rgba(255, 255, 255, 0.85);
+   color: var(--white);
+   font-size: 14px;
+   font-weight: 600;
+   text-shadow: none;
+   transition: 0.25s;
+}
+.banner-text p:hover {
+   background: rgba(255, 255, 255, 0.9);
+   color: var(--text);
+}
+.banner-dots {
+   position: absolute;
+   left: 50%;
+   bottom: 32px;
+   transform: translateX(-50%);
+   display: flex;
+   gap: 12px;
+   z-index: 10;
+}
+.banner-dot {
+   width: 7px;
+   height: 7px;
+   border-radius: 50%;
+   border: 1px solid rgba(255, 255, 255, 0.95);
+   background: transparent;
+   padding: 0;
+   cursor: pointer;
+}
+.banner-dot.active {
+   background: var(--white);
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+/* =========================================================
+  06. 商品セクション
+========================================================= */
+.product-section {
+   max-width: 1180px;
+   margin: 100px auto 0;
+   padding: 0 56px;
+}
+.section-header h2,
+.product-section h2 {
+   margin: 0 0 34px;
+   font-size: 22px;
+   font-weight: 700;
+   letter-spacing: 0.08em;
+   color: var(--text);
+}
+.product-section h2::after {
+   content: "";
+   display: block;
+   width: 42px;
+   height: 2px;
+   background: var(--main-blue);
+   margin-top: 16px;
+}
+.product-grid {
+   display: grid;
+   grid-template-columns: repeat(5, 1fr);
+   gap: 38px;
+}
+.product-card {
+   min-width: 0;
+   background: var(--white);
+   border: none;
+   padding: 0;
+}
+.product-card a {
+   color: inherit;
+}
+.product-image {
+   position: relative;
+   width: 100%;
+   aspect-ratio: 1 / 1;
+   background: linear-gradient(135deg, var(--pale-blue), var(--white));
+   overflow: hidden;
+   margin-bottom: 18px;
+}
+.product-image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.product-label {
+   position: absolute;
+   top: 0;
+   left: 0;
+   background: var(--main-blue);
+   color: var(--white);
+   font-size: 11px;
+   font-weight: 700;
+   letter-spacing: 0.12em;
+   padding: 8px 10px;
+   z-index: 2;
+}
+.rank-badge {
+   position: absolute;
+   top: 14px;
+   left: 14px;
+   width: 34px;
+   height: 34px;
+   border-radius: 50%;
+   background: rgba(255, 255, 255, 0.92);
+   border: 1px solid var(--brown);
+   color: var(--brown);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-weight: 700;
+   z-index: 2;
+}
+.product-name {
+   margin: 0 0 10px;
+   color: var(--text);
+   font-size: 14px;
+   font-weight: 700;
+   line-height: 1.7;
+}
+.product-price {
+   margin: 0;
+   color: var(--deep-blue);
+   font-size: 14px;
+   font-weight: 700;
+}
+.view-all-wrap {
+   text-align: center;
+   margin-top: 54px;
+}
+.view-all-button {
+   display: inline-block;
+   min-width: 132px;
+   padding: 15px 34px;
+   border: 1px solid var(--main-blue);
+   color: var(--deep-blue);
+   background: var(--white);
+   font-size: 13px;
+   font-weight: 700;
+   letter-spacing: 0.12em;
+   transition: 0.25s;
+}
+.view-all-button:hover {
+   background: var(--main-blue);
+   color: var(--white);
+}
+/* =========================================================
+  07. お知らせ
+========================================================= */
+.news-section {
+   max-width: 1180px;
+   margin: 100px auto 0;
+   padding: 0 56px;
+}
+.news-section h2 {
+   margin: 0 0 34px;
+   font-size: 22px;
+   letter-spacing: 0.08em;
+}
+.news-list {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   border-top: 1px solid #E5E5E5;
+}
+.news-list li {
+   display: grid;
+   grid-template-columns: 180px 1fr;
+   gap: 40px;
+   padding: 28px 0;
+   border-bottom: 1px solid #E5E5E5;
+}
+.news-list li:hover {
+   background: #FAFAFA;
+}
+.news-list strong {
+   margin: 0;
+   font-size: 14px;
+   line-height: 1.8;
+   color: var(--text);
+}
+.news-list p {
+   margin: 0;
+   font-size: 13px;
+   line-height: 2;
+   color: #5F6669;
+}
+
+/* =========================================================
+  09. プライバシーポリシー
+========================================================= */
+.policy-page {
+   max-width: 900px;
+   margin: 90px auto 120px;
+   padding: 0 40px;
+   color: var(--text);
+}
+.policy-page h1 {
+   margin: 0 0 52px;
+   font-size: 30px;
+   letter-spacing: 0.14em;
+   color: var(--deep-blue);
+   font-weight: 700;
+}
+.policy-page > p {
+   margin: 0 0 42px;
+   font-size: 14px;
+   line-height: 2.2;
+   color: var(--sub-text);
+}
+.policy-section {
+   margin-top: 42px;
+}
+.policy-section h2 {
+   margin: 0 0 16px;
+   padding-bottom: 12px;
+   border-bottom: 1px solid var(--line);
+   font-size: 17px;
+   letter-spacing: 0.08em;
+   color: var(--text);
+}
+.policy-section p {
+   margin: 0;
+   font-size: 14px;
+   line-height: 2.15;
+   color: var(--sub-text);
+}
+.policy-section ul {
+   margin: 14px 0 0;
+   padding-left: 1.4em;
+}
+.policy-section li {
+   margin: 8px 0;
+   font-size: 14px;
+   line-height: 2;
+   color: var(--sub-text);
+}
+.policy-date {
+   margin-top: 58px;
+   text-align: right;
+   font-size: 14px;
+   line-height: 2;
+   color: var(--sub-text);
+}
+/* =========================================================
+  10. キャンペーンページ
+========================================================= */
+.campaign-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 40px;
+   margin-top: 40px;
+}
+.campaign-card,
+.campaign-card:visited {
+   display: block;
+   color: inherit;
+   background: var(--white);
+}
+.campaign-image {
+   width: 100%;
+   aspect-ratio: 16 / 7;
+   background: #F5F8FA;
+   overflow: hidden;
+}
+.campaign-image img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+.campaign-text {
+   padding: 18px 0 0;
+}
+.campaign-text h3 {
+   margin: 0 0 8px;
+   font-size: 18px;
+   color: var(--text);
+}
+.campaign-text p {
+   margin: 0;
+   font-size: 13px;
+   color: var(--nav-blue);
+   font-weight: 700;
+}
+/* =========================================================
+  11. レスポンシブ
+========================================================= */
+@media (max-width: 1000px) {
+   .product-grid,
+   .product-scroll {
+       grid-template-columns: repeat(2, 1fr);
+       gap: 32px;
+   }
+}
+
+@media (max-width: 700px) {
+    .banner-text {
+        left: auto;
+        right: 20px;
+        top: auto;
+        bottom: 14px;
+        transform: none;
+        max-width: 62%;
+        text-align: center;
+    }
+    .banner-text h2 {
+        font-size: 15px;
+        line-height: 1.5;
+        margin: 0 0 10px;
+    }
+    .banner-text p {
+        padding: 8px 20px;
+        font-size: 11px;
+    }
+    .product-section,
+    .news-section {
+        padding: 0 24px;
+        margin-top: 72px;
+    }
+    .product-grid,
+    .product-scroll {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .news-list li {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .policy-page {
+        margin: 64px auto 90px;
+        padding: 0 24px;
+    }
+    .policy-page h1 {
+        font-size: 24px;
+    }
+    .campaign-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+

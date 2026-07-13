@@ -1,0 +1,215 @@
+@charset "UTF-8";
+/* ==============================
+  admin_responsive.css
+  管理画面：スマホ・タブレット用
+============================== */
+@media screen and (max-width: 768px) {
+   /* =====================
+      全体レイアウト
+   ===================== */
+   .admin-container {
+       display: block !important;
+       min-height: auto !important;
+   }
+   .admin-main-content {
+       margin-left: 0 !important;
+       padding: 12px !important;
+       box-sizing: border-box !important;
+       overflow-x: hidden !important;
+       background-color: #f8f9fa !important;
+   }
+   /* =====================
+      管理メニュー
+      横スクロール式タブ
+   ===================== */
+   .admin-sidebar {
+       position: static !important;
+       width: 100% !important;
+       height: auto !important;
+       background: #24292f !important;
+       padding: 14px 14px 0 !important;
+       box-sizing: border-box !important;
+       overflow-x: auto !important;
+       overflow-y: hidden !important;
+       white-space: nowrap !important;
+       -webkit-overflow-scrolling: touch !important;
+       border-bottom: 1px solid #d8dee4 !important;
+       box-shadow: none !important;
+   }
+   .admin-sidebar h2 {
+       margin: 0 0 12px !important;
+       font-size: 15px !important;
+       color: #fff !important;
+       letter-spacing: 0.03em !important;
+   }
+   .admin-sidebar hr {
+       display: none !important;
+   }
+   .admin-sidebar a {
+       display: inline-block !important;
+       margin: 0 4px 0 0 !important;
+       padding: 10px 12px 12px !important;
+       color: #d0d7de !important;
+       background: transparent !important;
+       border: none !important;
+       border-bottom: 3px solid transparent !important;
+       border-radius: 0 !important;
+       box-shadow: none !important;
+       font-size: 12px !important;
+       font-weight: 600 !important;
+       line-height: 1 !important;
+       text-decoration: none !important;
+       white-space: nowrap !important;
+   }
+   .admin-sidebar a:hover {
+       color: #fff !important;
+       background: rgba(255, 255, 255, 0.06) !important;
+       border-bottom-color: #58a6ff !important;
+       text-decoration: none !important;
+   }
+   /* スマホ版ではTOPメニューを非表示 */
+   .admin-sidebar a:first-of-type {
+       display: none !important;
+   }
+   /* ログアウトだけ赤系 */
+   .admin-sidebar a:last-child {
+       color: #ff7b72 !important;
+   }
+   .admin-sidebar::-webkit-scrollbar {
+       height: 4px;
+   }
+   .admin-sidebar::-webkit-scrollbar-thumb {
+       background: rgba(255, 255, 255, 0.25);
+       border-radius: 999px;
+   }
+   .admin-sidebar::-webkit-scrollbar-track {
+       background: transparent;
+   }
+   /* =====================
+      フォーム共通
+   ===================== */
+   input,
+   select,
+   textarea,
+   button {
+       max-width: 100% !important;
+       box-sizing: border-box !important;
+   }
+   input[type="text"],
+   input[type="number"],
+   input[type="password"],
+   input[type="datetime-local"],
+   select,
+   textarea {
+       font-size: 13px !important;
+   }
+   input[type="file"] {
+       max-width: 100% !important;
+       font-size: 12px !important;
+   }
+   textarea {
+       resize: vertical;
+   }
+   label {
+       word-break: keep-all !important;
+       overflow-wrap: normal !important;
+   }
+   /* =====================
+      テーブル共通
+      横スクロールあり・崩れ防止
+   ===================== */
+   table {
+       display: block !important;
+       width: 100% !important;
+       max-width: 100% !important;
+       overflow-x: auto !important;
+       overflow-y: auto !important;
+       max-height: 60vh !important;
+       border-collapse: collapse !important;
+       white-space: nowrap !important;
+       -webkit-overflow-scrolling: touch !important;
+   }
+   thead {
+       display: table-header-group !important;
+   }
+   tbody {
+       display: table-row-group !important;
+   }
+   tr {
+       display: table-row !important;
+       margin: 0 !important;
+       padding: 0 !important;
+       border: none !important;
+       border-radius: 0 !important;
+       background: transparent !important;
+       box-shadow: none !important;
+   }
+   th,
+   td {
+       display: table-cell !important;
+       width: auto !important;
+       min-width: 60px !important;
+       padding: 9px 10px !important;
+       font-size: 12px !important;
+       line-height: 1.5 !important;
+       vertical-align: middle !important;
+       white-space: nowrap !important;
+       word-break: normal !important;
+       overflow-wrap: normal !important;
+       border-bottom: 1px solid #eee !important;
+   }
+   th {
+       position: sticky !important;
+       top: 0 !important;
+       z-index: 2 !important;
+       background: #0aa3ad !important;
+       color: #fff !important;
+       font-weight: 700 !important;
+   }
+   td::before,
+   th::before {
+       content: none !important;
+   }
+   /* 長い商品名・タイトルなどは省略表示 */
+   td:nth-child(2),
+   td:nth-child(3) {
+       max-width: 150px !important;
+       overflow: hidden !important;
+       text-overflow: ellipsis !important;
+   }
+   /* ボタン・リンク・セレクトが潰れないように */
+   td button,
+   td a,
+   td select {
+       white-space: nowrap !important;
+   }
+   td select {
+       width: auto !important;
+       min-width: 70px !important;
+       max-width: 120px !important;
+       font-size: 12px !important;
+   }
+   /* テーブルのスクロールバー */
+   table::-webkit-scrollbar {
+       width: 8px !important;
+       height: 8px !important;
+   }
+   table::-webkit-scrollbar-thumb {
+       background: #9aa4aa !important;
+       border-radius: 999px !important;
+   }
+   table::-webkit-scrollbar-track {
+       background: #e9eef1 !important;
+       border-radius: 999px !important;
+   }
+   /* =====================
+      ボタン類
+   ===================== */
+   button,
+   input[type="submit"],
+   .btn,
+   .btn-login {
+       cursor: pointer;
+   }
+
+}

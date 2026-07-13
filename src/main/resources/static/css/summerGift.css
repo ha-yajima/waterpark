@@ -1,0 +1,311 @@
+@charset "UTF-8";
+/* ==============================
+  キャンペーンページ共通
+============================== */
+.campaign-page {
+   background: #f7fbff;
+   color: #233044;
+}
+/* ==============================
+  メインビジュアル
+============================== */
+.campaign-hero {
+   max-width: 1440px;
+   margin: 0 auto;
+   padding: 0;
+}
+.campaign-hero img {
+   display: block;
+   width: 100%;
+   height: auto;
+   border-radius: 0;
+   box-shadow: none;
+}
+/* ==============================
+  導入文
+============================== */
+.campaign-intro {
+   max-width: 900px;
+   margin: 56px auto;
+   padding: 0 24px;
+   text-align: center;
+}
+.section-label {
+   margin-bottom: 12px;
+   color: #4aa3df;
+   font-size: 13px;
+   font-weight: bold;
+   letter-spacing: 0.18em;
+}
+.campaign-intro h1 {
+   margin-bottom: 20px;
+   color: #1f344f;
+   font-size: 32px;
+}
+.campaign-intro p {
+   color: #5c6b7a;
+   line-height: 2;
+}
+/* ==============================
+  共通セクション
+============================== */
+.campaign-section,
+.campaign-guide {
+   max-width: 1100px;
+   margin: 64px auto;
+   padding: 0 24px;
+   text-align: center;
+}
+.campaign-section h2,
+.campaign-guide h2 {
+   margin-bottom: 32px;
+   color: #1f344f;
+   font-size: 28px;
+}
+/* ==============================
+  ランキング商品
+============================== */
+.product-grid {
+   display: grid;
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+   align-items: stretch;
+   max-width: 1100px;
+   margin: 0 auto;
+   gap: 24px;
+}
+.product-card {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   min-width: 0;
+   height: 100%;
+   padding: 20px;
+   box-sizing: border-box;
+   background: #fff;
+   border-radius: 20px;
+   box-shadow: 0 12px 30px rgba(45, 94, 140, 0.12);
+   text-align: left;
+}
+.rank {
+   position: absolute;
+   top: 18px;
+   left: 18px;
+   z-index: 2;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 42px;
+   height: 42px;
+   background: #d7ecf8;
+   color: #1f78a8;
+   border-radius: 50%;
+   box-shadow: 0 6px 14px rgba(70, 120, 160, 0.18);
+   font-size: 1.25rem;
+   font-weight: 700;
+   line-height: 1;
+}
+.product-image {
+   margin-bottom: 18px;
+}
+.product-image img {
+   display: block;
+   width: 100%;
+   height: 230px;
+   object-fit: cover;
+   border-radius: 16px;
+}
+.product-card h3 {
+   display: -webkit-box;
+   min-height: 48px;
+   margin: 0 0 12px;
+   overflow: hidden;
+   color: #24364f;
+   font-size: 14px;
+   line-height: 1.7;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 2;
+}
+.product-card p {
+   margin: 0 0 12px;
+   color: #667587;
+   line-height: 1.7;
+}
+.product-card .price {
+   margin-bottom: 12px;
+   color: #1f76b6;
+   font-size: 16px;
+   font-weight: bold;
+}
+.product-card .btn {
+   align-self: flex-start;
+   display: inline-block;
+   margin-top: auto;
+   padding: 10px 22px;
+   background: #1f8fd6;
+   color: #fff;
+   border-radius: 999px;
+   text-decoration: none;
+   font-weight: bold;
+}
+.product-card .btn:hover {
+   background: #1677b5;
+}
+/* ==============================
+  予算・カテゴリリンク
+============================== */
+.link-grid {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 18px;
+}
+.link-grid a {
+   display: block;
+   padding: 20px 12px;
+   background: #fff;
+   color: #24618f;
+   border-radius: 16px;
+   box-shadow: 0 8px 24px rgba(45, 94, 140, 0.1);
+   text-decoration: none;
+   font-weight: bold;
+   transition:
+       transform 0.2s,
+       box-shadow 0.2s;
+}
+.link-grid a:hover {
+   transform: translateY(-3px);
+   box-shadow: 0 14px 28px rgba(45, 94, 140, 0.16);
+}
+/* ==============================
+  ガイド
+============================== */
+.guide-grid {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 28px;
+   text-align: left;
+}
+.guide-box {
+   padding: 28px;
+   background: #fff;
+   border-radius: 20px;
+   box-shadow: 0 10px 28px rgba(45, 94, 140, 0.1);
+}
+.guide-box h3 {
+   margin-bottom: 14px;
+   color: #1f344f;
+}
+.guide-box p {
+   color: #667587;
+   line-height: 1.9;
+}
+/* ==============================
+  地域別リンク
+  関東・関西・北海道・沖縄
+============================== */
+.kanto-grid a {
+   position: relative;
+   min-height: 110px;
+   padding: 24px 20px;
+   overflow: hidden;
+   background:
+       radial-gradient(
+           circle at top right,
+           rgba(120, 205, 255, 0.22),
+           transparent 38%
+       ),
+       linear-gradient(
+           135deg,
+           #ffffff 0%,
+           #f3fbff 100%
+       );
+   border: 1px solid rgba(88, 170, 220, 0.22);
+   text-align: left;
+}
+.kanto-grid a::before {
+   content: "";
+   position: absolute;
+   right: -24px;
+   bottom: -28px;
+   width: 96px;
+   height: 96px;
+   border: 1px solid rgba(74, 163, 223, 0.22);
+   border-radius: 50%;
+}
+.kanto-grid a::after {
+   content: "水";
+   position: absolute;
+   right: 22px;
+   bottom: 14px;
+   color: rgba(74, 163, 223, 0.13);
+   font-family: serif;
+   font-size: 42px;
+   font-weight: bold;
+}
+.kanto-grid .area-name {
+   display: block;
+   margin-bottom: 10px;
+   color: #123a66;
+   font-size: 18px;
+   font-weight: 700;
+}
+.kanto-grid small {
+   display: block;
+   color: #6d8295;
+   font-size: 13px;
+   line-height: 1.6;
+}
+/* ==============================
+  予算リンク
+============================== */
+.budget-grid {
+   display: grid;
+   grid-template-columns: repeat(3, 280px);
+   justify-content: center;
+   gap: 24px;
+}
+/* ==============================
+  スマホ・タブレット対応
+============================== */
+@media screen and (max-width: 768px) {
+   .campaign-intro {
+       margin: 40px auto;
+       padding: 0 16px;
+   }
+   .campaign-intro h1 {
+       font-size: 24px;
+   }
+   .campaign-section,
+   .campaign-guide {
+       margin: 48px auto;
+       padding: 0 16px;
+   }
+   .campaign-section h2,
+   .campaign-guide h2 {
+       font-size: 22px;
+   }
+   .campaign-hero {
+       margin-top: 24px;
+   }
+   .product-grid,
+   .link-grid,
+   .guide-grid,
+   .budget-grid {
+       grid-template-columns: 1fr;
+   }
+   .product-grid {
+       max-width: 100%;
+   }
+   .product-card {
+       height: auto;
+   }
+   .product-card h3 {
+       min-height: auto;
+   }
+   .product-image img {
+       height: 220px;
+   }
+   .budget-grid {
+       width: 100%;
+   }
+}
+
